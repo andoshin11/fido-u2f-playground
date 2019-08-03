@@ -23,7 +23,8 @@ module.exports = {
   resolve: {
     extensions: [".js", ".ts", ".tsx", ".vue"],
     alias: {
-      vue: "vue/dist/vue.js"
+      vue: "vue/dist/vue.js",
+      '@': path.resolve(__dirname, 'src')
     }
   },
   module: {
@@ -36,14 +37,25 @@ module.exports = {
         test: /\.tsx?$/,
         use: [
           {
+            loader: 'babel-loader'
+          },
+          {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
               appendTsSuffixTo: ['\\.vue$'],
             }
-          }
+          },
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /\.(j|t)sx$/,
+        use: [
+          {
+            loader: 'vue-jsx-hot-loader'
+          }
+        ]
       }
     ]
   },
