@@ -2,8 +2,9 @@
   <div>{{ msg }}</div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   data() {
     return {
       msg: 'Hello, world!'
@@ -12,6 +13,5 @@ export default {
   mounted() {
     console.log('instance mounted')
   }
-}
+})
 </script>
-
