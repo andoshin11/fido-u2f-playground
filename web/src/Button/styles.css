@@ -1,0 +1,14 @@
+.button {
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #ff5b1a;
+  border: none;
+  padding: 8px 16px;
+  -webkit-appearance: none;
+  box-shadow: none;
+}

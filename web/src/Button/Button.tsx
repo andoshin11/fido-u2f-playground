@@ -1,4 +1,5 @@
 import * as tsx from 'vue-tsx-support'
+import styles from './styles.css'
 
 export default tsx.component({
   name: 'Button',
@@ -15,7 +16,7 @@ export default tsx.component({
   },
   render() {
     return (
-      <button onClick={this.sayHi} >{ this.text }</button>
+      <button onClick={this.sayHi} class={styles.button} >{ this.text }</button>
     )
   }
 })

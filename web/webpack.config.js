@@ -34,6 +34,27 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'vue-style-loader',
+            options: {
+              sourceMap: false,
+              shadowMode: false
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: false,
+              importLoaders: 4,
+              modules: true,
+              localIdentName: '[local]_[hash:base64:5]'
+            }
+          }
+        ]
+      },
+      {
         test: /\.tsx?$/,
         use: [
           {
