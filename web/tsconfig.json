@@ -10,7 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": ["vue-tsx-support/enable-check"],
+    "types": ["vue-tsx-support/enable-check", "node"],
     "paths": {
       "@/*": ["src/*"]
     },
@@ -20,7 +20,8 @@
     "./index.ts",
     "src/**/*.d.ts",
     "src/**/*.vue",
-    "src/**/*.tsx"
+    "src/**/*.tsx",
+    "src/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
