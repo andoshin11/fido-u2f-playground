@@ -20,15 +20,8 @@ export enum HTTPMethod {
 
 // APIClient is client class for xhr request
 export class APIClient implements NetworkClient {
-  baseURL: string = process.env.NODE_ENV === 'production' ? 'TBD' : 'TBD'
+  baseURL: string = 'https://localhost:30443/api'
   timeout: number = 15 * 1000
-
-  constructor() {
-    // For Dev use only
-    if (process.env.NODE_ENV !== 'production' && process.env.FLAG_AGREED === 'enabled') {
-      this.baseURL = 'http://localhost:3010/api'
-    }
-  }
 
   request<U>(request: APIRequest<U>): Promise<U> {
     const isRead = request.method === HTTPMethod.GET
@@ -80,16 +73,10 @@ export class APIClient implements NetworkClient {
 
   // Create headers
   private createHeaders() {
-    // For Dev use only
-    if (process.env.NODE_ENV !== 'production' && process.env.FLAG_AGREED === 'enabled') {
-      return {}
-    }
-
     return {
       'Content-Type': 'application/json',
       xhrFields: true,
       withCredentials: true,
-      'Access-Control-Allow-Origin': '*'
     }
   }
 }
