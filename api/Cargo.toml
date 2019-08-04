@@ -1,0 +1,23 @@
+[package]
+name = "fido_u2f_playground"
+version = "0.1.0"
+authors = ["andoshin11 <shinglish11@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+u2f = "0.1.4"
+serde = "^1.0"
+serde_json = "^1.0"
+lazy_static = "0.2"
+rocket_cors = "0.5.0"
+
+[dependencies.rocket]
+version = "0.4.0"
+features = ["tls"]
+
+[dependencies.rocket_contrib]
+version = "0.4.0"
+default-features = false
+features = ["json"]
