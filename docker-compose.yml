@@ -1,0 +1,21 @@
+version: "3"
+services:
+  https-portal:
+    image: steveltn/https-portal:1
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - web
+    environment:
+      STAGE: local
+      DOMAINS: 'localhost -> http://dockerhost:8080'
+    depends_on:
+      - web
+    volumes:
+      - ./certs:/var/lib/https-portal
+  web:
+    build: ./web
+    ports:
+      - '8080:80'
