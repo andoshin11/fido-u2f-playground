@@ -1,0 +1,2 @@
+[global.databases]
+diesel_postgres_pool = { url = "postgres://shin:shinglish@localhost/diesel_demo" }

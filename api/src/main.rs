@@ -1,3 +1,5 @@
+use fido_u2f_playground;
+
 fn main() {
-    println!("Hello, world!");
+    fido_u2f_playground::rocket().launch();
 }
