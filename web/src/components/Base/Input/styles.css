@@ -1,0 +1,14 @@
+.input {
+  background-color: #fff;
+  border-radius: 8px;
+  border: solid 1px #ddd;
+  padding: 11px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+.input[disabled] {
+  opacity: .7;
+  cursor: not-allowed;
+}
