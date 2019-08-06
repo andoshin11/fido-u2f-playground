@@ -1,0 +1,13 @@
+.FormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: left;
+}
+
+.submit {
+  width: 400px;
+}
