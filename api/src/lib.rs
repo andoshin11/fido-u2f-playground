@@ -55,6 +55,7 @@ pub fn rocket() -> rocket::Rocket {
                 routes::profiles::get_profile,
                 routes::profiles::follow,
                 routes::profiles::unfollow,
+                routes::misc::healthz
             ],
         )
         .attach(db::Conn::fairing())
