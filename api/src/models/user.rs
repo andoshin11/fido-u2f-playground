@@ -21,7 +21,7 @@ pub struct UserAuth<'a> {
     email: &'a str,
     bio: Option<&'a str>,
     image: Option<&'a str>,
-    token: String,
+    pub token: String,
 }
 
 #[derive(Serialize)]
