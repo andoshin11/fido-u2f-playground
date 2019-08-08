@@ -19,3 +19,26 @@ services:
     build: ./web
     ports:
       - '8080:80'
+  db:
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_DB: fido_sample
+      POSTGRES_PASSWORD: root
+      PGPASSWORD: root
+      DATABASEHOST: 0.0.0.0
+    image: postgres:11.4-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/sql:/var/lib/postgresql/data
+  api:
+    restart: on-failure
+    depends_on:
+      - db
+    build: ./api
+    environment:
+      ROCKET_ENV: development
+      DATABASE_URL: "postgres://root:root@db/fido_sample"
+    ports:
+      - "30443:30443"
+    command: bash -c "bash /build/wait-for-it.sh db:5432 -q -- diesel setup && cargo run"
