@@ -1,9 +1,11 @@
 [development]
-address = "localhost"
+address = "0.0.0.0"
 port = 30443
+workers = 4
+log = "normal"
 
 [global.databases]
-diesel_postgres_pool = { url = "postgres://shin:shinglish@localhost/diesel_demo" }
+diesel_postgres_pool = { url = "postgres://root:root@db/fido_sample" }
 
 [global.tls]
 certs = "private/cert.pem"
