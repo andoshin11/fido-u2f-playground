@@ -1,1 +1,6 @@
 certs
+database
+private
+target
+**/*.rs.bk
+.env
